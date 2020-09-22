@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+ // 1. 求1~100之间所有数的平均值 ，需要一个sum（和的变量），还需要一个平均值average变量
+ var sum =0;
+ var average =0;
+ for(var i=1;i<=100;i++){
+     sum = sum + i;
+ }
+ average = sum /100;
+ console.log(average);
+
+
+
+  // 2. 求 1~100之间所有偶数和奇数的和 ，偶数变量even，奇数变量odd
+  var even=0;
+  odd = 0;
+  for(var i =1 ;i<=100;i++){
+      if(i%2==0){
+          even = even +i;
+      }else{
+          odd = odd +i;
+      }
+  }
+  console.log('1~100之间所有的偶数和是'+even);
+  console.log('1~100之间所有的奇数和是'+even);
+
+  // 3. 求1~100之间所有能被3整除的数字的和
+  var result =0;
+  for(var i =1;i<=100;i++){
+      if(i%3==0){
+          result =result+i;
+      }
+  }
+console.log('1~100之间所有能被3整除的数字的和:'+result);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
