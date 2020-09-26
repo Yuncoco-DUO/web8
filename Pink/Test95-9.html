@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 简易ATM
+        // 1.里面现存有100元
+        // 2.如果存钱，就用输入钱数加上现存钱数，之后弹出显示余额提示框
+        // 3.如果取钱，就减去取的钱数，之后弹出显示余额提示框
+        // 4.如果显示余额，则输出余额
+        // 5.如果退出，则弹出退出信息提示框
+
+//  var count=100;
+//  var choice=prompt('请输入您的操作：\n 1.存钱\n 2.取钱\n 3.显示余额\n 4.退出');
+//  choice=parseInt(choice);
+//  while(choice!=4){
+//      switch(parseInt(choice)){
+//          case 1:var num=prompt('请输入您要存入的钱数：');count=count+parseInt(num);
+//          case 1:var num1=prompt('请输入您要取的钱数：');count=count-parseInt(num1);
+//          case 1:alert('count');
+//          break;
+//      }
+//      var choice=prompt('请输入您的操作：\n 1.存钱\n 2.取钱\n 3.显示余额\n 4.退出');
+//  }
+//  if(choice==4){
+//      alert('正在退出');
+//  }
+
+
+var money = 100;
+
+        while (true) {
+            var choice = prompt('请输入那您要的操作:' + '\n' + '1.存钱' + '\n' + '2.取钱' + '\n' + '3.查看余额' + '\n' + '4.退出');
+            choice=parseInt(choice);
+            if (choice!=4) {
+                switch (parseInt(choice)) {
+                    case 1:
+
+                        var num = prompt('请输入您要存的金额:');
+
+                        money += parseFloat(num);
+
+                        alert('您的余额为:' + money);
+
+                        break;
+
+                    case 2:
+
+                        var num1 = prompt('请输入您要取的金额:');
+
+                        if (parseFloat(num1) <= money) {
+                            money -= parseFloat(num1);
+
+                            alert('您的余额为:' + money);
+
+                            break;
+
+                        }
+
+                        else {
+                            alert('您的余额不足，请充值');
+
+                            break;
+
+                        }
+
+                    case 3:
+
+                        alert('您的余额为:' + money);
+
+                        break;
+
+                }
+
+            }
+
+            else if (parseInt(choice) === 4) {
+                alert('正在退出。。。');
+
+                break;
+
+            }
+
+            else {
+                alert('您输入的数字不对，请重输入')
+
+                continue;
+
+            }
+
+        }
+
+        alert('已经退出');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
