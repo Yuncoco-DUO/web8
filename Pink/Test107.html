@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10的元素选出来，放入新数组
+        // 1.声明一个新的数组用于存放新数据newArr
+        // 2.遍历原来的旧数组，找出大于等于10的元素
+        // 3.依次追加给原来的数组newArr
+
+        var arr=[2,0,6,1,77,0,52,0,25,7];
+        var newArr=[];
+    //    刚开始 newArr.length 就是0
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]>=10){
+                // 新数组的索引号应该从0开始，依次递增
+                newArr[newArr.length]=arr[i];
+                
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
