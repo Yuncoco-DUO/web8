@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 冒泡排序
+        var arr = [4,3,5,2,1];
+        for(var i =0;i<arr.length - 1;i++){ // 外层循环表示趟数
+            for(var j =0;j<arr.length -i- 1;j++){    // 里层循环表示每一趟的交换次数
+        // 内部交换2个变量的值 前一个和后一个数组元素相比较
+          if(arr[j]<arr[j+1]){
+               var temp = arr[j];
+               arr[j] = arr[j+1];
+               arr[j+1] = temp;
+              }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
