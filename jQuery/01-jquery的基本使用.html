@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div></div>  // DOM元素 （先有dom元素，再操作script)
+    <script>
+        $('div').hide();
+    </script> -->
+
+    <script>
+        //  1.等着页面DOM加载完毕再去执行js代码
+        //  $(document).ready(function(){
+        //     $('div').hide();
+        // })
+
+        // 2.等着页面DOM加载完毕再去执行js代码
+        $(function(){
+            $('div').hide();
+        });
+
+/* 2.3 jQuery 的入口函数
+
+第一种：
+  $(function(){
+      ... // 此处是页面DOM加载完成的入口
+  });
+
+第二种：
+  $(doucument).ready(function(){
+      ... // 此处是页面DOM加载完成的入口
+  });
+
+*/
+
+
+    </script>
+
+</body>
+</html>
