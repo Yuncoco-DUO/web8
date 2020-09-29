@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+<!-- 太酷了，期待自己也能写出来 -->
+
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <script src="js/text.js"></script>
+ <style>
+ *{
+     margin: 0px;
+     padding: 0px;
+ }
+ body{
+     background-color: black;
+ }
+ canvas { 
+     cursor: crosshair;
+     display: block;
+ }
+ </style>
+ <title>新年快乐！</title>
+</head>
+<body>
+ <canvas id="begin">画布未开启,请更换浏览器！</canvas>
+ <script>
+     //刷新动画率
+     window.requestAnimFrame = (function(){ //设置动画
+     //兼容
+     return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            function(callback) {
+                window.setTimeout( callback, 1000 / 60 ); //16ms
+            };
+     })();
+     var canvas=document.getElementById('begin');//获取画布
+     var setcanvas=canvas.getContext('2d'); //返回一个2D画布
+     var winWidth=window.innerWidth; //设置画布大小-宽度
+     var winHeight=window.innerHeight; //设置画布大小-高度
+     canvas.width=winWidth;
+     canvas.height=winHeight;
+     var color=230; //画布整体色调
+     //获得随机数(a到b)
+     function getrandom(a,b){ 
+         return Math.random()*b+a;
+     }
+     //烟花发射点和爆炸点之间的距离
+     function Distance(x1,y1,x2,y2){ 
+         var xLength=x2-x1;
+         var yLength=y2-y1;
+         //使用数学公式两点之间的距离平方=两点x差的平方+两点y差的平方
+         return Math.sqrt(Math.pow(xLength,2) + Math.pow(yLength,2));        
+     }
+     //初始化烟花的弹药运动
+     var ammunitions=Array(); //弹药数组
+     function Ammunition(myx1,myy1,myx2,myy2){
+         //发射坐标-开始
+         this.myx1=myx1;
+         this.myy1=myy1;
+         //过程坐标-动态
+         this.movingx=myx1;
+         this.movingy=myy1;
+         //爆炸坐标-结束
+         this.myx2=myx2;
+         this.myy2=myy2;
+         //创建多个坐标位置集合
+         this.position=Array();
+         this.positionNum=3; //位置数配合push向数组添加元素
+         while(this.positionNum--){
+             this.position.push([this.movingx,this.movingy]);
+         }
+         //获取烟花运行角度
+         this.angle =Math.atan2(myy2-myy1,myx2-myx1);//表示点(y, x)对应的偏移角度
+         this.allDistance=Distance( this.myx1, this.myy1, this.myx2, this.myy2); //发射-爆炸总路程
+         this.leaveDistance=0; //初始离开距离为0
+         //设置烟花越来越快速度
+         this.speed = 2;
+         this.Variety=1.06; //变化
+         this.light=getrandom(20,50); //20~50的亮度
+     }
+     //弹药发射-运动-爆炸过程运动的实现
+     Ammunition.prototype.achieve=function(a){
+         //在弹药数组开头添加新的位置并删除弹药数组中的最后一项
+         this.position.pop();
+         this.position.unshift([this.movingx,this.movingy]);
+         //设置烟花越来越快速度
+         this.speed *= this.Variety;
+         var speedx = Math.cos( this.angle ) * this.speed;
+         var    speedy = Math.sin( this.angle ) * this.speed;
+         //发射后离开的距离
+         this.leaveDistance = Distance(this.myx1,this.myy1,this.movingx+speedx,this.movingy+speedy);
+         //离开的距离大于等于到目标的初始距离则已到达目标
+         if( this.leaveDistance >= this.allDistance) {
+             createMore(this.myx2,this.myy2); //烟花绽放多个烟花粒子
+             //删除烟花,向(从)数组中添加(删除)项目,删除位置和删除数量两个参数，第三个参数是添加用的
+             ammunitions.splice(a,1);
+         } else {
+             // 未达到目标，继续前进
+             this.movingx += speedx;
+             this.movingy += speedy;
+         }
+         //画出烟花炮弹的轨迹
+         setcanvas.beginPath(); //beginPath()开始一条路径，或重置当前的路径
+         //moveTo(x,y)把路径移动到画布中的指定点,不创建线条
+         setcanvas.moveTo(this.position[this.position.length-1][0],this.position[this.position.length-1][1]);
+         //lineTo(x,y)添加一个新点，然后在画布中创建从该点到最后指定点的线条,不会创建线条
+         setcanvas.lineTo(this.movingx,this.movingy);
+         //设置轨迹的颜色,饱和度和亮度,HSL(H,S,L);
+         setcanvas.strokeStyle='hsl('+color+',100%,'+this.light+'%)';
+         setcanvas.stroke(); //绘制已定义的路径
+     }
+
+         //初始化烟花粒子
+         var fireworksParticles=Array(); //烟花粒子数组
+         function FireworksParticle(x,y){
+             this.x=x;
+             this.y=y;
+             //跟踪每个粒子的过去坐标以创建轨迹效果，增加坐标数以创建更突出的轨迹
+             this.position = Array();
+             this.positionNum = 6;
+             while( this.positionNum-- ) {
+                 this.position.push([this.x,this.y]); //push()方法可向数组的末尾添加一个或多个元素
+             }
+             //设置烟花粒子随机运动角度
+             this.angle = getrandom( 0, Math.PI * 2 );
+             //设置烟花粒子随机运行速度和速度逐渐减慢功能
+             this.speed=getrandom(1,9);
+             this.slow=0.9;
+             this.alpha=1; //透明度最开始不透明
+             this.setAlpha=getrandom(0.01,0.03);//设置随机降低烟花粒子的透明度速率
+             this.color=getrandom(color-20,40); //动态颜色，设为(color-x,color-y)为动态彩色
+             this.light=getrandom(30,50); //30~50的随机亮度
+             this.count=1;
+         }
+         //烟花中一个粒子出现效果的实现
+         FireworksParticle.prototype.achieve=function(a){
+             // 删除坐标数组中的最后一项
+             this.position.pop();
+             // 将当前坐标添加到数组的开头
+             this.position.unshift([this.x,this.y]);
+             //设置烟花粒子随机运行速度和速度逐渐减慢功能
+             this.speed *= this.slow;
+             //烟花粒子速度改变且一直是向下运动+1
+             this.x += Math.cos( this.angle ) * this.speed;
+             this.y += Math.sin( this.angle ) * this.speed + 1;
+             if(mousedown) this.color=getrandom(color-50,color+100);
+             //淡出粒子
+             this.alpha -= this.setAlpha;
+             // 当透明度足够低时删除对应粒子
+             if( this.alpha <= this.setAlpha) {
+                 fireworksParticles.splice(a,1);
+             }
+             //画出烟花粒子
+             setcanvas.beginPath();
+             setcanvas.moveTo(this.position[ this.position.length - 1 ][ 0 ], this.position[ this.position.length - 1 ][ 1 ] );
+             setcanvas.lineTo(this.x,this.y );
+             //hsla比hsl多一个alpha透明度参数
+             setcanvas.strokeStyle = 'hsla(' + this.color + ', 100%, ' + this.light + '%, ' + this.alpha + ')';
+             setcanvas.stroke();
+         }
+         //创建多个烟花粒子
+         function createMore(x,y){
+             var numbeer=160;  //创建烟花粒子的数量
+             while(numbeer--){
+                 fireworksParticles.push(new FireworksParticle(x,y)); //push向数组的末尾添加一个或多个元素
+             }
+         }
+         //鼠标的点击控制
+         var mousedown=false;
+         var mousex;
+         var mousey;
+         canvas.addEventListener('mousemove',function(e){
+             //event.clientX、event.clientY鼠标相对于浏览器窗口可视区域的X，Y坐标(窗口坐标)
+             mousex=e.clientX;
+             mousey=e.clientY;
+         });
+         //鼠标按下状态
+         canvas.addEventListener('mousedown',function(e){
+             e.preventDefault(); //取消事件的默认动作。
+             mousedown = true;
+         });
+         canvas.addEventListener('touchstart',function(e){
+             e.preventDefault();
+             mousedown = true;
+         });
+         //无限循环
+         var Time=90; //自动发射粒子
+         var enter=0;
+         var limit=5; //最大鼠标点击数
+         var limitNum=0;
+         var autoNum=20; //自动发放烟花数
+         var CircleRadius=1; //半径
+         function loop() {
+             //此函数将与requestAnimationFrame一起无限运行
+             requestAnimFrame(loop);    
+             //随着时间的推移增加色相以获得不同颜色的烟花
+             color += 0.5;
+             if(color>360) color=10;
+             //globalCompositeOperation 属性设置或返回如何将一个源(新的)图像绘制到目标(已有)的图像上
+             setcanvas.globalCompositeOperation = 'destination-out'; //destination-out在源图像外显示目标图像。只有源图像外的目标图像部分会被显示，源图像是透明的。
+             //fillStyle设置或返回用于填充绘画的颜色、渐变或模式，第四个参数alpha(透明度)参数
+             setcanvas.fillStyle = 'rgba(0, 0, 0, 0.5)'; //0，0，0黑色
+             //fillRect(矩形左上角的x坐标,矩形左上角的y坐标,矩形的宽度,矩形的高度)绘制“被填充”的矩形
+             setcanvas.fillRect( 0, 0, winWidth, winHeight );
+             //弹药和烟花粒子相互重叠，产生明亮的亮点，像是爆炸点白光
+             //lighter：显示源图像 + 目标图像。
+             setcanvas.globalCompositeOperation = 'lighter';
+             var i = ammunitions.length;
+             while(i--){
+                 ammunitions[i].achieve(i);
+             }    
+             var i =fireworksParticles.length;
+             while(i--){
+                 fireworksParticles[i].achieve(i);
+             }
+             //设置烟花发射时间
+             if(enter>=Time){
+                 //在屏幕的底部开始放烟花，然后设置随机目标坐标，将在屏幕上半部分的范围内设置随机y坐标
+                 for(var i=0;i<autoNum;i++){
+                         var po=getrandom(0,winWidth);
+                         ammunitions.push( new Ammunition(po,winHeight,po,getrandom(0,winHeight/2)));
+                     }
+                     enter = 0;    
+             }else{
+                 enter++;
+             }
+         }
+         window.onload = loop;
+ </script>
+</body>
+</html>
