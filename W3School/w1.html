@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<!-- 本例报错，没有显示时间日期 -->
+   
+    <h2>我的第一段 JavaScript</h2>
+<button type="button"
+onlink="document.getElementById('demo').innerHTML = Date()">
+点击这里来显示日期和时间
+</button>
+
+<p id="demo"></p>
+
+<!-- Document是一个对象，它的作用是当浏览器载入HTML文档，
+     即可生成 Document 对象，Document对象是HTML文档的根节点，
+     帮助我们从脚本中对HTML 页面中所有元素进行访问。
+    我们使用getElementById() 方法来获取id="demo"的元素标签：
+ -->
+ <!-- 使用innerHTML修改HTML内容（将”。。。“ 更改为”Date()“）。
+修改HTML内容，我们通过innerHTML 属性，
+可设置或返回表格行的开始和结束标签之间的 HTML，
+也就是，可以对应的获取/赋值元素内容。直接为innerHTML属性赋值，
+将"。。。"内容设置为 “Date()”。 -->
+
+</body>
+</html>
