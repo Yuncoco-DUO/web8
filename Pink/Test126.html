@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // arguments 的使用  只有函数才有 arguments 对象，而且每个函数都内置好了这个arguments
+        function fn(){
+            // console.log(arguments);  // 里面存储了所有传递过来的实参  arguments = [1,2,3]
+// console.log(arguments.length);
+// console.log(arguments[2]);
+// 可以按照数组的方式遍历arguments
+for(var i = 0;i<arguments.length;i++){
+    console.log(arguments[i]);
+}
+        }
+        fn(1,2,3);
+        fn(1,2,3,4,5);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
