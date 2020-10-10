@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用函数冒泡排序 sort 排序  sort 函数，可以接收一个函数，返回值是比较两个数的相对顺序的值
+        function sort(arr){
+            for(var i=0;i<arr.length -1;i++){  // 外层循环控制趟数
+                // 5个数据走4趟，长度就是数组长度减去1 arr.length -1
+                for(var j =0;j<arr.length-i-1;j++){ // 内层循环控制交换次数
+                    // 第一趟交换4次，...第四趟交换1次，长度就是数组长度减去 次数，因为从0开始，所以arr.length-i-1 
+                    if(arr[j] >arr[j+1]){
+                        var temp = arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                        // 交换变量
+                    }
+                }
+            }
+            return arr;
+        }
+        var arr1 = sort([1,4,7,5]);
+        console.log(arr1);
+        var arr2 = sort([1,44,47,599]);
+        console.log(arr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
