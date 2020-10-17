@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-         // 利用构造函数创建对象
+        // 利用构造函数创建对象
+
         // function 构造函数名（）{
        // this.属性 = 值;
       // this.方法 = function(){}
@@ -15,17 +16,33 @@
             this.name=uname;
             this.age=age;
             this.sex=sex;
+            this.sing = function(sang){
+                console.log(sang);
+            }
         }
   var ldh= new Star('刘德华',18,'男'); // 调用函数返回的是一个对象
         console.log(ldh.name);
         console.log(ldh['sex']);
+        ldh.sing('冰雨');
 var zxy = new Star('张学友',19,'男');
         console.log(zxy.name);
         console.log(zxy['age']);
-
+zxy.sing('李香兰');
         // 构造函数首字母要大写
         // 构造函数不需要return 就可以返回结果
         // 使用构造函数，必须使用new
+        // 只用new Star() 调用函数就创建一个对象 ldh{}
+// 属性和方法前面必须添加this
+
+
+
+
+
+
+
+
+
+
     </script>
 </head>
 <body>
