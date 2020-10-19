@@ -1,0 +1,138 @@
+<!--以下代码仅供参考-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布局</title>
+    <style>
+        /* *{ 
+	margin:Opx;
+	padding:0px;
+	} */
+        .main{
+            border:10px solid pink;
+            text-align: center;
+            background-color: cornsilk;
+        
+        }
+        .top{
+            display:block;
+            
+            width:1000px;
+            height:150px;
+
+        }
+        .zhongjian{
+            display:block;
+            width:1000px;
+            height:450px;
+           margin-bottom: 10px;
+        }
+        /* .zhongjian_menu{
+            border:1px ;
+            width:1000;
+            height:450;
+            text-align: center;
+
+        } */
+.div1{
+	border: 10px soild #AAB0C3;
+	background-color: #FFD100;
+	width: 30%;
+	height: 150px;
+	float:left;
+    left:0px;
+    margin-left: 3%;
+	/* font-size: 53px; */
+	text-align: center;
+	font-family: "幼圆";
+    margin-top: 10px;
+
+    display:block;
+}
+    
+
+.dibu{
+    display:block;
+            width:1000px;
+            height:140px;
+            margin-top: 20px;
+            border: 1px solid black;
+            line-height: 150px;
+
+}
+.div4{
+    display:block;
+    line-height:70px;
+   
+    margin-top: 20px;
+
+}
+
+
+        .title{
+            background-color:rgb(20, 216, 241);
+            height:50px;
+            line-height: 50px;
+            margin-top: 10px;
+        }
+        .menuWrapper {
+            background-color:blue;
+        }
+        .submenu {
+            display:inline-block;
+            background-color:purple;
+            width:150px;
+            height:100px;
+            line-height: 100px;
+            text-align: center;
+            margin:0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <div class="title">江西软件职业技术大学</div>
+            <div class="menuWrapper">
+                <div class="submenu">学校概况</div>
+                <div class="submenu">新闻中心</div>
+                <div class="submenu">机构设置</div>
+                <div class="submenu">师资队伍</div>
+                <div class="submenu">联系我们</div>
+            </div>
+        </div>   
+        <!-- top -->
+
+      <div class="zhongjian"  >
+      
+ <div  class="div1" >软件工程学院</div>
+ <div  class="div1"  >网络工程学院</div>
+ <div  class="div1" >信息技术学院</div>
+ <div  class="div1"  >经济管理学院</div>
+ <div  class="div1" >区块链学院</div>
+ <div  class="div1" >VR与艺术学院</div>
+ <div  class="div1" >新媒体学院</div>
+ <div  class="div1" >国际学院</div>
+ <div  class="div1" >软件工程学院</div>
+
+
+      </div> 
+       <!-- zhongjian -->
+
+<!-- dibu -->
+<div class="dibu">
+<div class="div4">学校地址：江西省南昌市先锋创客小镇</div>
+<div class="div4">邮编：330041</div>
+
+</div>
+
+</div>
+   </div>
+    </div>
+
+</body>
+</html>
+
+<!-- 呃呃呃，有瑕疵，没有清除浮动 -->
