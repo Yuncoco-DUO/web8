@@ -1,0 +1,80 @@
+<!-- 1)利用div和position定位实现
+
+其中用到了三个比较重要的属性：
+
+       a】position  定位
+
+       b】z-index  定位层级
+
+       c】opacity 透明度
+
+              标准 不透明度：  opacity:0~1; 
+              IE 滤镜：           filter:alpha(opacity=0~100);  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优酷弹幕</title>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+        }
+        .box{
+            margin:100px auto;
+            position: relative;
+        }
+        .content{
+            background-color: green;
+            position: absolute;
+            left:-3px;
+            top:-3px;
+            z-index: 2;
+        }
+        .mark{
+            background-color: #0c1315;
+            position: absolute;
+            right: -6px;
+            bottom: -6px;
+            z-index: 1;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content">内容</div>
+        <div class="mark">标记</div>
+    </div>
+</body>
+</html> 
+
+
+
+2)利用box-shadow属性实现
+       box-shadow 向框添加一个或多个阴影。
+       该属性是由逗号分隔的阴影列表，
+       每个阴影由 2-4 个长度值、可选的颜色值以及可选的 inset 关键词来规定。
+       省略长度的值是 0。 -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优酷弹幕2</title>
+    <style>
+        .box{
+            width:300px;
+            height:300px;
+            margin:100px auto;
+            background-color: green;
+            box-shadow:6px 6px 0px #727272;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html> -->

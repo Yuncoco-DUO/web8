@@ -1,0 +1,60 @@
+<!-- 
+    Html css position属性
+
+  position属性把元素放置在一个静态的,相对的,绝对的,或则固定的位置中.
+    
+    属性值：
+1、static
+2、relative
+3、absolute
+4、fixd
+
+附：文档流又称正常流，
+是默认情况下HTML元素排版布局过程中元素
+会自动按照自上而下或从左往右进行流式排放的一种顺序。
+
+
+inherit:规定应该从父元素继承 position 属性的值(static和inherit不是很常用)
+ 
+
+
+static:
+默认值。没有定位，
+元素出现在正常流中（忽略 top, bottom, left, right 或者 z-index 声明），
+即没有脱离文档流。 -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>定位</title>
+	</head>
+	<style>
+	/* 绝对定位
+    1.第一个属性:absolute
+生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+
+元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定*/
+ 
+	div.pos_abs{
+		position:absolute;
+		left:100px;
+		top:150px;
+		width:200px;
+		height:200px;
+		background-color:black;
+		color:white;
+		text-align:center;
+	}
+	div{
+		border:2px solid black;
+	}
+	</style>
+	<body>
+		<div class="pos_abs">
+			这是一个绝对定位的盒子
+		</div>
+		<div>
+			通过绝对定位,元素可以放置在页面上的任何位置,下面的黑色盒子距离页面左侧100px,距离页面顶部150px.
+		</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ /*2.第二个属性: fixed
+ 固定定位元素,相对于浏览器窗口进行定位
+元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。*/
+
+div.pos_abs{
+ 
+ /*下面是一个基于浏览器窗口的固定定位*/
+ position:fixed;
+ left:100px;
+ top:150px;
+ width:200px;
+ height:200px;
+ background-color:black;
+ color:white;
+ text-align:center;
+}
+div{
+ border:2px solid black;
+ width:500px;
+ height:500px;
+}
+
+</style>
+<body>
+    <div class="pos_abs">
+        这是一个固定定位的盒子
+    </div>
+    <div>
+        通过fixed固定定位,元素可以放置在页面上的任何位置,下面的黑色盒子距离浏览器窗口左侧100px,距离浏览器窗口顶部150px.当我们滚动页面时,黑盒子和浏览器窗口的相对位置不会发生任何变化.
+    </div>
+    <div>此盒子用来撑开页面高度</div>
+    <div>此盒子用来撑开页面高度</div>
+
+</body>
+</html>
+<!-- 用两个盒子撑开页面高度,当我们使页面向下滚动的时候,
+    会发现fixed固定的黑盒子,始终以浏览器窗口为参照,
+    固定在页面上. -->
