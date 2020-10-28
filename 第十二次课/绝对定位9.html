@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            /* 清除浏览器页面的间隔空隙 */
+        }
+        body{
+            background-color:paleturquoise;
+        }
+        /* div{
+            background-color: pink;
+            width: 400px;
+            height: 300px;
+            /* margin: 100px 200px 300px 400px ; 上右下左 */
+            /* margin: 200px 400px; /*上下200 ，左右400
+            margin: 200px 300px  400px;  上200,下300 ，左右400
+        }*/
+        #grandParents{
+            background-color:red;
+            width: 600px;
+            height: 400px;
+            margin: 200px 300px  400px;  
+        }
+        .parent1{
+            background-color:royalblue;
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+            display: inline-block;
+        }
+        .parent2{
+            background-color:yellow;
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="grandParents">
+        <div class="parent1">
+        <div class="son1">
+       
+        </div>
+    </div>
+        <div class="parent2">
+            <div class="son2">
+
+
+            </div>
+        </div>
+    </div>
+    <!-- #grandParent>(.parent1>.son1)+>(.parent2>.son2) -->
+</body>
+</html>

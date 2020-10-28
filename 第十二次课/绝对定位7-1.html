@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:cyan;
+        }
+        /* 标签选择器 */
+        i{
+            background-color:darkorchid;
+            /* width:100px;
+            height:100px;
+            行内元素设置宽与高无用 */
+            /* display: block;  ，行内元素设置，一行转一块 */
+        }
+        /* id选择器 */
+        #name{
+            font-weight: bold;
+        }
+        span{
+            background-color:darkgray;
+        }
+        strong{
+            background-color:gold;
+        }
+        /* i,span,strong行内元素 */
+        .box1,.box2,.box3{
+            width:100px;
+            height:100px;
+            display: inline-block;
+        }
+        .box1{
+            background-color:brown;
+           
+        }
+        .box2{
+            background-color:chartreuse;
+          
+            /* display: inline;  将块级元素转为行内元素 */
+
+        }
+        .box3{
+            background-color:cornflowerblue;
+            /* display: inline-block; 将行内元素转为块级元素 */
+           
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <i id="name">江西</i>
+        <span>软件</span>
+        <strong>大学</strong>
+        <div class=box1></div>
+        <div class=box2></div>
+        <div class=box3></div>
+    </body>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:aquamarine;
+        }
+        .wrapper{
+            background-color: cyan;
+            height: 500px;
+            width: 800px;
+            margin: 50px;
+            margin-left: 200px;
+            /* border: 1px soild red; */
+            /* BFC 块级格式化上下文本 清除浮动*/
+            overflow: hidden;
+        }
+        .grandParents{
+            background-color: darksalmon;
+            width: 600px;
+            height: 400px;
+            margin: 20px;
+            position:relative;
+        }
+        .parent1{
+            background-color:springgreen;
+            width: 200px;
+            height: 200px;
+            display:inline-block;
+            margin: 10px;
+          
+        }
+        .parent2{
+            background-color:rgb(130, 90, 205);
+            width: 200px;
+            height: 200px;
+            display:inline-block;
+            margin: 10px;
+        }
+        .son1{
+            background-color: thistle;
+            width: 30px;
+            height: 30px;
+            position:absolute;
+            /* 设置绝对定位absolu要看父级，如果父级是static，继续往上一级找，如果非static，直接找body */
+            top:10px;
+        }
+        .son2{
+            background-color:teal;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            top:10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="grandParents">
+          <div class="parent1"> 
+              <!-- .parent1 再回车 -->
+              <div class="son1"></div>
+            </div>
+          <div class="parent2">
+               <div class="son2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
