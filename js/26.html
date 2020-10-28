@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--js书写方式：引入js文件-->
+		<script src="js文件名" type="text/javascript"></script>
+		<!--js书写方式：head里面-->
+		<script type="text/javascript">
+			alert('你好，世界');
+		</script>
+	</head>
+	<body>
+		<!--js书写方式：写在html元素中-->
+		<input type="button" value="提交" onclick="alert('注册成功')" />
+		<p id="first">1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<!--js书写方式：写在body里面-->
+		<script type="text/javascript">
+			document.getElementById('first').innerHTML="1111";
+		</script>
+	</body>
+</html>

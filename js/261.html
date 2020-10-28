@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//如何使用变量
+			//先定义后赋值
+			//每行语句之后用;结尾
+			var age;
+			age = 18;
+			//定义且赋值
+			var age= 18;
+			document.write(age);
+			document.write("<br/>");
+			//多变量赋值
+			var age,name,sex;
+			age=18;
+			name='zs';
+			document.write(age);
+			document.write(name);
+			document.write("<br/>");
+			//同时声明多个变量并赋值
+			var age = 10, name = 'zs';
+
+			//1.交换两个变量的值【通过临时变量】
+			var n1 = 5;
+			var n2=6;
+			var tmp;
+			tmp=n1;
+			n1=n2;
+			n2 = tmp;
+			document.write(n1);
+			document.write(n2);
+			document.write("<br/>");
+			//2.不使用临时变量，交换两个数值变量的值【使用算数运算符】
+			var n1=5,n2=6;
+			n1 =n1+n2;  //得出两个之和
+			n2=n1-n2;   //得出n2的值【是以前n1的值】
+			n1=n1-n2;	//得出n1的值【是以前n2的值】
+			document.write(n1,n2,'<br/>');
+			var result = 0.1 + 0.2; 
+			console.log(result);
+			//计算字符的长度
+			var str = 'abcd';
+			document.write(str.length,"<br/>");
+			var str2 = '你好';
+			document.write(str2.length,"<br/>");
+			//undefined表示一个声明了没有赋值的变量
+			var str3;
+			document.write(str3);
+			//获取变量的类型
+			var age = 18;
+			console.log(typeof age);
+			//转换数据类型 1.转换成字符串类型【toString】
+			var num=5;
+			console.log(typeof num.toString());
+			//undefined和null如果要转换就用String()方法
+			var num = 18;
+			var null2;
+			console.log(String(num));
+			console.log(String(null2));
+			//拼接方式 1.字符串类型 返回ab
+			console.log('a'+'b');
+			//拼接方式 2.数值类型 返回10
+			console.log(4+6);
+			//拼接方式 3.数值转化为string类型 返回34
+			var a1 = 3;
+			var a2 = 4;
+			a1 = a1.toString();
+			a2 = a2.toString();
+			console.log(a1+a2);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
