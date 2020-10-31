@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿新浪微博下拉菜单</title>
+</head>
+<body>
+    <h3 id="top"><a href="#">微博</a></h3> 
+    <ul> 
+        <li><a href="#">私信</a></li> 
+        <li><a href="#">评论</a></li> 
+        <li><a href="#">@我</a></li> 
+    </ul> 
+    <script>
+        // 1.获取元素
+        var lis=document.querySelectorAll('.li');
+        // 2.注册事件 处理程序
+        top.mouseover=function(){
+            this.show();
+        }
+        top.mouseout=function(){
+            this.hide();
+        }
+        // 真糟糕，目前的水平还不能仿写下拉菜单，加油
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开关灯案例</title>
+</head>
+<body >
+    <button>开关灯</button>
+    <script>
+        // 1.获取元素
+        var btn=document.querySelector('.button');
+        var body=document.getElementsByTagName('body')[0]
+        // 2.注册事件 处理程序
+        var flag=0;
+        btn.onclick=function(){
+      // 点击一次之后，flag一定要变化
+            if(flag==0){
+             body.style.background=' #000000'
+                flag = 1;
+            }else{
+                body.style.background=' #FFFFFF'
+                flag =0;
+            }
+            
+        }
+
+        // 不知为何没有实现开关灯效果
+    </script>
+</body>
+</html>
