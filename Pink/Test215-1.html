@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示隐藏内容</title>
+    <style>
+        input{
+            color: #999;
+           
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="邮箱/ID/手机号" style="border:0.5px solid #378888">
+    <script>
+        // 1.获取元素
+        var text = document.querySelector('input');
+        // 2.注册事件 处理程序
+        text.onfocus = function(){
+            if(this.value==='邮箱/ID/手机号'){
+                this.value='';
+            }
+            input.style="border:0.5px solid #FECFD5";
+    }  
+     text.onblur = function(){
+        if(this.value===''){
+                this.value='邮箱/ID/手机号';
+            }
+            // this.style.borderColor='#999';
+    }
+    </script>
+</body>
+</html>
