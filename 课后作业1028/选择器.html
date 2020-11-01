@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css选择器</title>
+    <!-- 基础选择器：
+        1.标签选择器：针对一类标签 ，如ul、li、labelinput、div等标签
+        2.ID选择器：针对某一个特定的标签使用，css中的ID选择器以”#”来定义。任何的HTML标签都可以有id属性。
+        3.类选择器：针对你想要的所有标签使用，css中的类用“圆点.”来定义
+        class属性的特点：
+            （1）类选择器可以被多种标签使用。
+            （2）同一个标签可以使用多个类选择器。用空格隔开
+        4.通用选择器（通配符）：“*” ，针对所有的标签都适用 
+        
+    -->
+    <!-- 高级选择器：
+    1.后代选择器：定义的时候用空格隔开 
+       .div1 p{
+            color:red;
+        }
+     空格就表示后代。.div1 p 表示.div1的后代所有的p。
+    2.交集选择器：没有空格，一般以标签名开头
+      h3.special{
+          coloe:red;
+      }
+    3.组合（并集）选择器：定义的时候用逗号隔开
+    p,h1,#mytitle,.one{
+    color:red;
+    }
+    /*带有p,h1,id="mytitle",class="one"的标签都内容会显示红色*/
+    4.伪类选择器
+    5.兄弟选择器：+表示选择下一个兄弟
+h3+p{
+	color:red;
+}
+上方的选择器意思是：选择的是h3元素后面紧挨着的第一个兄弟p。
+ -->
+ <style>
+     div1{
+         /* border-radius: 10px; */
+         display: inline-block;
+         width: 120px;
+         height: 80px;
+         margin: 50px ;
+        background-color:skyblue;
+   }
+   #wrapper{
+       border-radius: 20px;
+       text-align: center;
+       line-height: 80px;
+   }
+   h3{
+       color:red;
+   }
+   .name{
+       font-size: 20px;
+       font-weight: bold;
+   }
+   
+ </style>
+</head>
+<body>
+    <h3>江西南昌</h3>
+    <div1 id="wrapper" class="name">江西软件大学</div1>
+    
+</body>
+</html>

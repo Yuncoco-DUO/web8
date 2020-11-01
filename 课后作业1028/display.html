@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三者的转换</title>
+    <!-- 　
+    (1)display:inline;转换为行内元素
+
+　　(2)display:block;转换为块状元素
+
+　　(3)display:inline-block;转换为行内块状元素 -->
+<style>
+     span {
+             display: block;
+             width: 120px;
+             height: 30px;
+             background: red;
+      }
+     div {
+         display: inline;
+         width: 120px;
+         height: 200px;
+         background: green;
+       }
+      i {
+          display: inline-block;
+          width: 120px;
+          height: 30px;
+          background: lightblue;
+       }
+</style>
+</head>
+<body>
+    <span>行内转块状</span>
+    <div>块状转行内 </div>
+    <i>行内转行内块状</i>
+</body>
+</html>
