@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:lightblue;
+        }
+        .wrapper{
+            background-color:lightgreen;
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin-left: -300px;
+            margin-top: -200px;
+            /* 以上步骤为居中 */
+        }
+        #leftTab{
+            background-color:darkgray;
+            width: 30%;
+            height: 90%;
+            /* margin-top: 3%; */
+            position: absolute;
+            top: 5%;
+
+        }
+        #rightTab{
+            background-color: lightskyblue;
+            width: 70%;
+            height:90%;
+            float: right;
+            position: relative;
+            top:5%;
+        }
+        .menu{
+            background-color:mediumpurple;
+            height: 30px;
+            margin-top: 10px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #leftTab div:first-child{
+                background-color:paleturquoise;
+                margin-top: 50px;
+        }
+        .menu a{
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .menu a:active{
+            background-color:tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="leftTab">
+            <!-- #menu$*5 快捷键写5个div -->
+            <!-- 点一个键，再按住alt键，再点其他键，可以依次选中，整体修改 -->
+            <div id="menu1" class="menu">
+                <a href="#home" class="menuName">学校概况</a>
+            </div>
+            <div id="menu2" class="menu">
+                <a href="#news" class="menuName">新闻中心</a>
+            </div>
+            <div id="menu3" class="menu">
+                <a href="#department" class="menuName">机构设置</a>
+            </div>
+            <div id="menu4" class="menu">
+                <a href="#teachers" class="menuName">师资队伍</a>
+            </div>
+            <div id="menu5" class="menu">
+                <a href="#teaching" class="menuName">教育教学</a>
+            </div>
+        </div>
+        <div id="rightTab">
+            <!-- div#$*5 -->
+            <div id="home"></div>
+            <div id="news"></div>
+            <div id="department"></div>
+            <div id="teachers"></div>
+            <div id="teaching"></div>
+        </div>
+    </div>
+</body>
+</html>
