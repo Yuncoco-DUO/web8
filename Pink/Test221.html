@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取元素属性</title>
+</head>
+<body>
+    <div id="demo" index="1"></div>
+    <script>
+        var div=document.querySelector('div');
+        // 1.获取元素的属性值
+        // (1) element.属性  ,获取内置属性
+        console.log(div.id);
+        // (2) element.getAttribute('属性')  自己添加的属性称为自定义器属性，如index
+        console.log(div.getAttribute('id'));
+        console.log(div.getAttribute('index'));
+    </script>
+</body>
+</html>
