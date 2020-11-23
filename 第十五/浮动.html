@@ -1,0 +1,43 @@
+<!-- BFC 块级格式化上下文 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            border:5px solid green;
+            /* overflow: hidden; */
+            position: absolute;
+        }
+          #left{
+            width: 200px;
+            height: 200px;
+            background-color:blue;
+            float:left;
+        }
+      
+        #middle{
+            width: 200px;
+            height: 200px;
+            background-color:red;
+            float:left;
+        }
+        #right{
+            width: 200px;
+            height: 200px;
+            background-color:yellow;
+            float:left;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="left"></div>
+        <div id="middle"></div>
+        <div id="right"></div>
+    </div>
+</body>
+</html>

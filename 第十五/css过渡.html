@@ -1,0 +1,32 @@
+<!-- 浏览器是单线程的 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#wrapper{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border:10px solid green;
+}
+#wrapper:hover{
+    width: 500px;
+    /* height: 300px; */
+    transition: width ease 5s;
+}
+    </style>
+   
+</head>
+<body>
+    <div id="wrapper">
+
+    </div>
+    <script>
+        var target = window.document.getElementById("wrapper");
+        target.style.backgroundColor="blue-";
+    </script>
+</body>
+</html>
