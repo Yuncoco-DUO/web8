@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.new Object()
+        // var hero = new Object(); // 空对象
+        // hero.blood = 100;
+        // hero.name='刘备';
+        // hero.weapon='剑';
+
+        // hero.attack=function(){
+        //     console.log(this.weapon+'攻击敌人');
+        // }
+
+        // 2.对象字面量 (创建单个对象)
+        // var hero = {}; // 空对象
+    //     var hero = {
+    //         blood:100,
+    //         name:'刘备',
+    //         weapon:'剑',
+    //         attack:function(){
+    //             console.log(this.weapon+'攻击敌人');
+    //         }
+    //     }
+    //    hero.attack();
+
+    // 3.工厂函数 创建多个对象
+    function createHero(name,blood,weapon){
+        var o = new Object();
+        o.name=name;
+        o.blood=blood;
+        o.weapon=weapon;
+        o.attack=function(){
+            console.log(this.weapon+'攻击敌人');
+        }
+        return o;
+    }
+
+    var hero=createHero('刘备',100,'剑');
+    var hero1=createHero('关羽',100,'刀');
+    </script>
+</body>
+</html>
