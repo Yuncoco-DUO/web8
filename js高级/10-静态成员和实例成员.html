@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var MyMath = {
+            PI:3.1415926,
+            max:function(){
+            },
+            min:function(){
+            }
+        }
+
+        // 工具中使用静态成员
+        // 静态成员：直接使用对象来调用的
+        // MyMath.PI;
+        // MyMath.max()
+
+        // 实例成员：构造函数中的成员就是实例成员
+        // 什么是实例：对象的另一种说法
+
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+            this.sayHi=function(){
+
+            }
+        }
+
+        // 通过构造函数创建对象
+        var p =new Person('zs',18);
+        p.sayHi
+    </script>
+</body>
+</html>
