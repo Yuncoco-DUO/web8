@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 每一个构造函数都有一个属性 原型/原型对象
+        function Student(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+        }
+
+        // console.log(Student.prototype);
+        Student.prototype.sayHi=function(){
+            console.log('大家好，我是'+this.name);
+        }
+
+        // 通过Student构造函数，创建的对象，可以访问Student.prototype中的成员
+        var s1 = new Student('lilei',18,'男');
+        var s2= new Student('hmm',18,'女');
+
+        s1.sayHi();
+        s2.sayHi();
+
+        console.log(s1.sayHi == s2.sayHi); // true
+    </script>
+</body>
+</html>

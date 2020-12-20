@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 构造函数
+        // function Student(name,age,sex){
+        //     this.name=name;
+        //     this.age=age;
+        //     this.sex=sex;
+
+        //     // 多个对象，会存储多个sayHi方法
+        //     this.sayHi=function(){
+        //         console.log('大家好，我是'+this.name);
+        //     }
+        // }
+
+        // var s1 = new Student('lilei',18,'男');
+        // var s2= new Student('hmm',18,'女');
+
+        // s1.sayHi();
+        // s2.sayHi();
+
+        // // console.log(s1.sayHi == s2.sayHi); // false
+
+
+
+
+        // 解决sayHi存储多份的问题
+        function Student(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+
+            // 多个对象，会存储多个sayHi方法
+            this.sayHi= sayHi;
+            }
+        
+            function sayHi(){
+                console.log('大家好，我是'+this.name);
+            }
+
+        var s1 = new Student('lilei',18,'男');
+        var s2= new Student('hmm',18,'女');
+
+        s1.sayHi();
+        s2.sayHi();
+
+        console.log(s1.sayHi == s2.sayHi); // true
+    </script>
+</body>
+</html>
