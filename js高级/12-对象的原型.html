@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ function Student(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+
+            this.sayHi=function(){
+                console.log('test');
+            }
+        }
+    Student.prototype.sayHi=function(){
+        console.log('大家好，我是'+this.name);
+    }
+
+    // 通过Student 构造函数，创建的对象，可以访问 Student.prototype中的成员
+    var s1 = new Student('lilei',18,'男');
+    var s2= new Student('hmm',18,'女');
+
+        s1.sayHi();
+        console.dir(s1)
+
+
+        // 当调用对象的属性或者方法的时候，先去找对象本身的属性/方法，
+        // 如果对象没有该属性或者方法，此时去调用原型中的属性/方法
+        // s1.__proto__  对象的__proto__ 等于 构造函数的Student.prototype
+        // __proto__是非标准的属性 
+
+        console.log(s1.__proto__ === Student.prototype); // true
+        console.dir(s1.__proto__);
+        console.dir(Student.prototype);
+
+        //在原型对象中有一个属性 constructor 指向构造函数
+        console.log(s1.constructor === Student);
+
+        var arr = [];
+        // Array.prototype.constructor
+        console.log(arr.constructor === Array);
+    </script>
+</body>
+</html>
