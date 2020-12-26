@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <video src="宫崎骏动画中的美食.mp4  muted"></video>
+    <script>
+    // 1.DOM对象转换为 jQuery对象
+    // （1） 直接获取视频，得到的就是jquery对照
+    //    $('video');
+    //  (2)  使用原生js,获取过来 DOM对象
+    var myvideo = document.querySelector('video');
+    // $(myvideo).play(); jquery里面没有play这个方法
+    // 2.jQuery对象转换为DOM对象
+    // myvideo.play();
+    $('video')[0].play()
+    // $('video').get(0).play()
+
+    </script>
+</body>
+</html>
