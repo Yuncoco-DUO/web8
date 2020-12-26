@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ul>
+    <ol>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ol>
+    <script>
+        $(function(){
+            $("ul li:first").css("color","red"); // ul中的第一个li元素
+            $("ul li:eq(2)").css("color","blue");// ul中的索引号为2的li元素
+            $("ol li:odd").css("color","skyblue");// ol中的所有索引号为奇数的li元素
+            $("ol li:even").css("color","pink");// ol中的所有索引号为偶数的li元素
+
+        })
+    </script>
+</body>
+</html>
