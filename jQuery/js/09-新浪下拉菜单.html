@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.8.3.js"> </script>
+</head>
+<body>
+    <ul class="nav">
+         <li>
+             <a href="#">微博</a>
+             <ul>
+                 <li>
+                     <a href="">私信</a>
+                 </li>
+                 <li>
+                    <a href="">评论</a>
+                 </li>
+                 <li>
+                    <a href="">@我</a>
+                 </li>
+             </ul>
+         </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li> 
+                <li>
+                   <a href="">评论</a>
+                </li>
+                <li>
+                   <a href="">@我</a>
+                </li>
+            </ul>
+         </li>
+         <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                   <a href="">评论</a>
+                </li>
+                <li>
+                   <a href="">@我</a>
+                </li>
+            </ul>
+         </li>Y
+    </ul>
+    <script>
+        $(function(){
+            // 鼠标经过
+            $(".nav>li").mouseover(function(){
+                // $(this) jQuery 当前元素 this不要加引号
+                // show() 显示元素
+                $(this).children("ul").show();
+            });
+            // 鼠标离开
+            $(".nav>li").mouseout(function(){
+                $(this).children("ul").hide();
+        })
+    })
+    </script>
+</body>
+</html>
