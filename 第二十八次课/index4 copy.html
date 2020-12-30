@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.8.3.js"></script>
+    <style>
+        #wrapper{
+            background-color: royalblue;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .new{
+            border-radius: 20% ;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper"> </div>
+    <script>
+        $(this).mousemove(function(event){
+            // console.log();
+            $("#wrapper").css("left",event.clientX+"px");
+            $("#wrapper").css("top",event.clientY+"px");
+            $("#wrapper").addClass("new");
+        })
+        $(this).mouseout(function(){
+            $("#wrapper").css("left",0+"px");
+            $("#wrapper").css("top",0+"px");
+            $("#wrapper").removeClass("new");
+            var temp=$("<span>临时</span>") // 临时追加 append
+            $("wrapper").append(temp)
+
+            // $("#wrapper").remove(); 移除div
+        })
+    </script>
+</body>
+</html>

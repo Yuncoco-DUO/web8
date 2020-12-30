@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+    <style>
+        #wrapper{
+            background-color: slateblue;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 1 <body onclick=""> --> 
+<div id="wrapper"></div>
+
+    
+    <script>
+
+        // 事件监听
+        // window.onclick=function(){
+            //  2
+        // }
+
+        // 3
+        window.addEventListener("click",function(){
+            console.log("this is click");
+        })
+        // // window.onclick=function(){}
+        // window.addEventListener("mousemove",function(event){
+        //     console.log(event.x+" | "+event.y);
+        //     console.log(event.clientX+" * "+event.clientY);
+        // })
+     
+         window.addEventListener("mousemove",function(event){
+            document.getElementById("wrapper").style.left=event.clientX+"px";
+            document.getElementById("wrapper").style.top=event.clientY+"px";
+         })
+
+        //  window.addEventListener("mouseenter",function(event){
+        //     document.getElementById("wrapper").style.backgroundColor="red";
+        //     //  document.getElementById("wrapper").translate(clientX,clientY)
+           
+        //  })
+         window.addEventListener("mouseout",function(event){
+             document.getElementById("wrapper").style.backgroundColor="green";
+             document.getElementById("wrapper").style.left=0;
+             document.getElementById("wrapper").style.top=0;
+         })
+
+        // window.Mousemove
+        // document.body.style.backgroundcolor="blue"
+
+    </script>
+</body>
+</html>

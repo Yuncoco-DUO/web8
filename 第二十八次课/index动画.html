@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        #wrapper{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            /* 5秒之内无限循环 */
+            animation: my2 5s infinite;
+
+        }
+        @keyframes my{
+        10%{
+            background-color:green;
+        }
+        50%{
+            background-color:green;
+        }
+        80%{
+            background-color:purple;
+            width: 400px;
+            height: 400px;
+        }
+        }
+        @keyframes my2{
+            from{
+                background-color:red; 
+            }
+            to{
+                background-color:green; 
+                /* transform: rotateY(120dg); */
+                transform:rotateX(120dg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper"></div>
+    <div>
+        <ol type="1">
+ 
+        </ol>
+    </div>
+</body>
+</html>
